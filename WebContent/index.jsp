@@ -11,6 +11,7 @@
     	window.resizeTo(520, 340);
         comment.focus();
 	}
+    
 </script>
 <style type="text/css">
   html, body {
@@ -76,9 +77,10 @@
 </head>
 <body onLoad="onLoadFunction();">
 <div id="comment-area" class="comment-area" align="center">
+<form action="SaveCommentServlet" method="POST">
 <table>
 <tr>
-<td align="left"><label class="number-label">3434</label></td>
+<td align="left"><label id="nmi-number" class="number-label">3434</label></td>
 </tr>
 <tr>
 <td><textarea name="comment" id="comment" rows="3" cols="15" placeholder="Type Comments"></textarea></td>
@@ -86,10 +88,12 @@
 <tr height="30">
 <td align="right">
 <button type="button" class="button-c" value="Cancel" onclick="self.close()">Cancel</button>
-<button type="button" class="button-s" value="Submit">OK</button>
+<input class="button-s" id="submit" type="submit" value="OK" />
+<!-- button type="button" class="button-s" value="Submit">OK</button> -->
 </td>
 </tr>
 </table>
+</form>
 </div>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns="http://java.sun.com/xml/ns/javaee" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+		id="WebApp_ID" version="3.0">
+
+    <display-name>NMI Comment Application</display-name>
+	<welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+  	<context-param>
+	  <param-name>dbUser</param-name>
+	  <param-value>sa</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>dbPassword</param-name>
+	  <param-value>pc</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>dbURL</param-name>
+	  <param-value>jdbc:sqlserver://localhost\\SQLEXPRESS:1433</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>dbDriver</param-name>
+	  <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+	</context-param>
+	<context-param>
+	  <param-name>log4j-config</param-name>
+	  <param-value>WEB-INF/log4j.xml</param-value>
+	</context-param>
+	
+    <servlet>
+        <servlet-name>SaveCommentServlet</servlet-name>
+        <servlet-class>com.vrsailor.triatinit.SaveCommentServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SaveCommentServlet</servlet-name>
+        <url-pattern>/NMIComment</url-pattern>
+    </servlet-mapping>
+
+	<filter>
+	  <filter-name>AuthenticationFilter</filter-name>
+	  <filter-class>com.vrsailor.triatinit.AuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	  <filter-name>AuthenticationFilter</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>     
