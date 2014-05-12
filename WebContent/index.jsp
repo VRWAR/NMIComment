@@ -4,34 +4,92 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>NMI Comment</title>
+<script type="text/javascript">
+ 
+    function onLoadFunction() {
+    	window.resizeTo(520, 340);
+        comment.focus();
+	}
+</script>
 <style type="text/css">
+  html, body {
+    height: 100%;
+  }
+  html {
+    display: table;
+    margin: auto;
+  }
+  body {
+  	display: table-cell;
+    vertical-align: middle;
+    align:center;
+    background-color: #f1f1f1; 
+  }
   textarea {
      display: block;
      width: 400px;
-     height: 120px;
+     height: 100px;
      padding: 8px;
      border: 1px solid #cccccc;
      line-height: 130%;
      font-size: 13px;
   } 
+  .button-s {
+	height: 21px;
+	width: 65px;
+	background-color: #0080FF; 
+	color : #FFFFFF;
+	font-size: 13px;
+  }
+  .button-c {
+	height: 21px;
+	width: 65px;
+	background-color: #848484; 
+	color: #FFFFFF;
+	font-size: 13px;
+	text-align: center;
+  }
+  .comment-area{
+    padding: 20px 24px 20px;
+  	background-color: #ffffff; 
+  	width: 400px; 
+  	height: 140px; 
+  	left: 0px; 
+  	top: 0px;
+  	display:table-cell;
+  	vertical-align:middle;
+  	font-weight: 400;
+	overflow: hidden;
+  	webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	box-shadow: 0 1px 3px rgba(0,0,0,.13);
+	position: relative;
+  }
+  .number-label{
+  	height: 19px;
+	width: 65px;
+	font-size: 13px;
+  	font-weight: normal;
+	font-style: inherit;
+  }
 </style>
 </head>
-<body>
-
-<div id="comment-area">
-<div id="UMINumber">
-<label>3434</label>
+<body onLoad="onLoadFunction();">
+<div id="comment-area" class="comment-area" align="center">
+<table>
+<tr>
+<td align="left"><label class="number-label">3434</label></td>
+</tr>
+<tr>
+<td><textarea name="comment" id="comment" rows="3" cols="15" placeholder="Type Comments"></textarea></td>
+</tr>
+<tr height="30">
+<td align="right">
+<button type="button" class="button-c" value="Cancel" onclick="self.close()">Cancel</button>
+<button type="button" class="button-s" value="Submit">OK</button>
+</td>
+</tr>
+</table>
 </div>
-<div id="comment">
-<label class="prompt" for="content" id="content-prompt-text">Type Comments</label>
-<textarea name="comment" id="comment" class="mceEditor" rows="3" cols="15" style="overflow-x: hidden; height: 33px; overflow-y: auto;"></textarea>
-</div>
-<p class="submit">
-<input type="submit" name="save" id="save-post" class="button button-primary" value="OK">
-</p>
-
-</div>
-
 </body>
 </html>
