@@ -1,11 +1,11 @@
-<project name="My Project" default="help" basedir=".">
+<project name="NMIComment" default="help" basedir=".">
   <!-- Define the properties used by the build -->
-  <property name="app.name"      value="hello"/>
-  <property name="tcserver.home" value="/opt/vmware/vfabric-tc-server-standard-2.8.0.RELEASE/tomcat-7.0.30.A.RELEASE" />
+  <property name="app.name"      value="NMIComment"/>
+  <property name="tcserver.home" value="F:\\Development\\tools\\Apache Tomcat 7.0.34" />
   <property name="work.home"    value="${basedir}/work"/>
   <property name="dist.home"     value="${basedir}/dist"/>
   <property name="src.home"      value="${basedir}/src"/>
-  <property name="web.home"      value="${basedir}/web"/>
+  <property name="web.home"      value="${basedir}/WebContent"/>
 
   <target name="help">
     <echo>You can use the following targets:</echo>
@@ -27,6 +27,9 @@
     </fileset>
     <pathelement location="${tcserver.home}/lib"/>
     <fileset dir="${tcserver.home}/lib">
+      <include name="*.jar"/>
+    </fileset>
+  	<fileset dir="${web.home}/WEB-INF/lib">
       <include name="*.jar"/>
     </fileset>
   </path>
@@ -61,7 +64,6 @@
     </copy>
 
   </target>
-
 
   <target name="dist" depends="compile"
           description="Create WAR file for binary distribution">

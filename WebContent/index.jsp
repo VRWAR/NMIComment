@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>NMI Comment</title>
+<%
+String nmi_number = "";
+if(request.getParameter("NMI") != null) 
+	nmi_number = request.getParameter("NMI");
+%>
 <script type="text/javascript">
  
     function onLoadFunction() {
@@ -12,6 +17,17 @@
         comment.focus();
 	}
     
+    function validateInput() {
+    	if(document.getElementById("NMINumber").value == null || 
+    			document.getElementById("NMINumber").value == ""){
+   	     	document.getElementById("errorMsg").innerHTML="NMI number cannot be empty.";
+	   	}else if(document.getElementById("comment").value == null ||
+	   			document.getElementById("comment").value==""){
+	   		document.getElementById("errorMsg").innerHTML="Comment cannot be empty.";
+	   	}else{
+	   		document.getElementById("addComment").submit();
+	   	}
+    }
 </script>
 <style type="text/css">
   html, body {
@@ -73,23 +89,48 @@
   	font-weight: normal;
 	font-style: inherit;
   }
+  .text-font{
+  	font: 1em/1.6em Verdana,sans-serif;
+	font-family: Verdana, sans-serif;
+	font-size: 1em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.6em;
+	color: #454545;
+  }
+  .error-font{
+  	font: 0.8em/1.2em Verdana,sans-serif;
+	font-family: Verdana, sans-serif;
+	font-size: 0.7em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.6em;
+	color: #FF0000;
+  }
 </style>
 </head>
 <body onLoad="onLoadFunction();">
 <div id="comment-area" class="comment-area" align="center">
-<form action="SaveCommentServlet" method="POST">
+<form id="addComment" action="SaveCommentServlet" method="POST">
 <table>
 <tr>
-<td align="left"><label id="nmi-number" class="number-label">3434</label></td>
+<td align="left" colspan="2">
+<label id="nmi-text" class="text-font"><%=nmi_number%></label>
+<input id="NMINumber" name="NMINumber" type="hidden" value="<%=nmi_number%>"/>
+</td>
 </tr>
 <tr>
-<td><textarea name="comment" id="comment" rows="3" cols="15" placeholder="Type Comments"></textarea></td>
+<td colspan="2"><textarea name="comment" id="comment" rows="3" cols="15" placeholder="Type Comments"></textarea></td>
 </tr>
 <tr height="30">
+<td align="left">
+<label id="errorMsg" class="error-font"></label>
+</td>
 <td align="right">
 <button type="button" class="button-c" value="Cancel" onclick="self.close()">Cancel</button>
-<input class="button-s" id="submit" type="submit" value="OK" />
-<!-- button type="button" class="button-s" value="Submit">OK</button> -->
+<input class="button-s" type="button" value="OK" onclick="validateInput();" />
 </td>
 </tr>
 </table>
