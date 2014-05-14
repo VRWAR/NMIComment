@@ -19,10 +19,12 @@
 	<context-param>
 	  <param-name>dbURL</param-name>
 	  <param-value>jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=VRSailor</param-value>
+	  <!-- <param-value>jdbc:teradata://ServerHost/database=MyDatabaseName,tmode=ANSI,charset=UTF8</param-value> -->
 	</context-param>
 	<context-param>
 	  <param-name>dbDriver</param-name>
 	  <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+	  <!-- <param-value>com.teradata.jdbc.TeraDriver</param-value> -->
 	</context-param>
 	<context-param>
 	  <param-name>log4j-config</param-name>
