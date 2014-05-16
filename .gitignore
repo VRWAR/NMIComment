@@ -17,6 +17,7 @@ local.properties
 .loadpath
 work/
 build/
+dist/
 
 # External tool builders
 .externalToolBuilders/
