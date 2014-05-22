@@ -7,12 +7,10 @@ import java.sql.SQLException;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
  
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.xml.DOMConfigurator;
  
-@WebListener
 public class AppContextListener implements ServletContextListener {
  
     public void contextInitialized(ServletContextEvent servletContextEvent) {

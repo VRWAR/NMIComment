@@ -4,6 +4,10 @@
 		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
 		id="WebApp_ID" version="3.0">
 
+	<listener>
+		<listener-class>com.vrsailor.triatinit.AppContextListener</listener-class>
+	</listener>
+
     <display-name>NMI Comment Application</display-name>
 	<welcome-file-list>
     	<welcome-file>index.jsp</welcome-file>
@@ -38,7 +42,7 @@
 
     <servlet-mapping>
         <servlet-name>SaveCommentServlet</servlet-name>
-        <url-pattern>/NMIComment</url-pattern>
+        <url-pattern>/SaveCommentServlet</url-pattern>
     </servlet-mapping>
 
 	<filter>

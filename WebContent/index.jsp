@@ -7,8 +7,8 @@
 <title>NMI Comment</title>
 <%
 String nmi_number = "";
-if(request.getParameter("NMI") != null) 
-	nmi_number = request.getParameter("NMI");
+if(request.getParameter("key") != null) 
+	nmi_number = request.getParameter("key");
 %>
 <script type="text/javascript">
  
