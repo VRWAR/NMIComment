@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Error</title>
-<script type="text/javascript">
- 
-    function onLoadFunction() {
-    	window.resizeTo(950, 700);
-        comment.focus();
-	}
-    
-</script>
-<style type="text/css">
-  html, body {
+html, body {
     height: 100%;
   }
   html {
@@ -27,8 +13,8 @@
   }
   textarea {
      display: block;
-     width: 850px; 
-  	 height: 500px; 
+     width: 780px;
+     height: 100px;
      padding: 8px;
      border: 1px solid #cccccc;
      line-height: 130%;
@@ -37,7 +23,7 @@
   .button-s {
 	height: 21px;
 	width: 65px;
-	background-color: #0080FF; 
+	background-color: #428bca; 
 	color : #FFFFFF;
 	font-size: 13px;
   }
@@ -52,8 +38,8 @@
   .comment-area{
     padding: 20px 24px 20px;
   	background-color: #ffffff; 
-  	width: 400px; 
-  	height: 140px; 
+  	width: 850px; 
+  	height: 500px; 
   	left: 0px; 
   	top: 0px;
   	display:table-cell;
@@ -73,31 +59,68 @@
   }
   .text-font{
   	font: 1em/1.6em Verdana,sans-serif;
-	font-family: Verdana, sans-serif;
+	font-family: sans-serif;
 	font-size: 1em;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
-	line-height: 1.6em;
+	line-height: 1em;
 	color: #454545;
   }
-</style>
-</head>
-<body onLoad="onLoadFunction();">
-<div id="comment-area" class="comment-area" align="center">
-<form action="SaveCommentServlet" method="POST">
-<table>
-<tr>
-<td align="center"><img src="images\error.png" /></td>
-<td align="center"><font class="text-font">Add comment failed. <br>Please try again.</font></td>
-</tr>
-<tr height="30">
-<td align="center" colspan="2">
-<input Type="button" class="button-c" VALUE="Back" onClick="history.go(-1);return true;">
-</td>
-</tr>
-</table>
-</form>
-</div>
-</body>
-</html>
+  .error-font{
+  	font: 0.8em/1.2em Verdana,sans-serif;
+	font-family: Verdana, sans-serif;
+	font-size: 0.7em;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.6em;
+	color: #FF0000;
+  }
+
+.listTalbeContainer {
+    width: 800px;
+}
+
+.listTalbeContainer table {
+    table-layout: fixed;
+    color: #333;
+	font-family: sans-serif;
+	font-size: .8em;
+	font-weight: 300;
+	line-height: 25px;
+	border-spacing: 0;
+	border: 0px;
+	width: 800px;
+	padding:0;
+	margin:0;
+}
+.listTableHead {width: 800px;}
+.listTableHead tr td {
+    background: #428bca;
+	color: #fff;
+	border: none;
+	font-weight: bold;
+}
+
+.listTable{
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border:1px solid #eee;
+    padding:0;
+	margin:0;
+}
+
+.listTable table{
+	margin: none;
+}
+
+.listTable tr td {
+    padding: 5px;
+    border: 1px solid #eee;
+    word-wrap: break-word;
+}
+
+.listTable tr:hover {background-color: #f0fbff;}
+

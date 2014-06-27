@@ -1,57 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-		xmlns="http://java.sun.com/xml/ns/javaee" 
-		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
-		id="WebApp_ID" version="3.0">
-
-	<listener>
-		<listener-class>com.vrsailor.triatinit.AppContextListener</listener-class>
-	</listener>
-
-    <display-name>NMI Comment Application</display-name>
-	<welcome-file-list>
-    	<welcome-file>index.jsp</welcome-file>
-  	</welcome-file-list>
-  	<context-param>
-	  <param-name>dbUser</param-name>
-	  <param-value>sa</param-value>
-	</context-param>
-	<context-param>
-	  <param-name>dbPassword</param-name>
-	  <param-value>pc</param-value>
-	</context-param>
-	<context-param>
-	  <param-name>dbURL</param-name>
-	  <param-value>jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=VRSailor</param-value>
-	  <!-- <param-value>jdbc:teradata://ServerHost/database=MyDatabaseName,tmode=ANSI,charset=UTF8</param-value> -->
-	</context-param>
-	<context-param>
-	  <param-name>dbDriver</param-name>
-	  <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
-	  <!-- <param-value>com.teradata.jdbc.TeraDriver</param-value> -->
-	</context-param>
-	<context-param>
-	  <param-name>log4j-config</param-name>
-	  <param-value>WEB-INF/log4j.xml</param-value>
-	</context-param>
-	
-    <servlet>
-        <servlet-name>SaveCommentServlet</servlet-name>
-        <servlet-class>com.vrsailor.triatinit.SaveCommentServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>SaveCommentServlet</servlet-name>
-        <url-pattern>/SaveCommentServlet</url-pattern>
-    </servlet-mapping>
-
-	<filter>
-	  <filter-name>AuthenticationFilter</filter-name>
-	  <filter-class>com.vrsailor.triatinit.AuthenticationFilter</filter-class>
-	</filter>
-	<filter-mapping>
-	  <filter-name>AuthenticationFilter</filter-name>
-	  <url-pattern>/*</url-pattern>
-	</filter-mapping>
-
-</web-app>     
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <listener>
+    <listener-class>com.vrsailor.triatinit.AppContextListener</listener-class>
+  </listener>
+  <display-name>Write back Application</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>dbUser</param-name>
+    <param-value>sa</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbPassword</param-name>
+    <param-value>pc</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbURL</param-name>
+    <param-value>jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=VRSailor</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbDriver</param-name>
+    <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4j-config</param-name>
+    <param-value>WEB-INF/log4j.xml</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>SaveCommentServlet</servlet-name>
+    <servlet-class>com.vrsailor.triatinit.SaveCommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveCommentServlet</servlet-name>
+    <url-pattern>/SaveComment</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>AuthenticationFilter</filter-name>
+    <filter-class>com.vrsailor.triatinit.AuthenticationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthenticationFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>

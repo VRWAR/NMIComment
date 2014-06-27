@@ -2,7 +2,7 @@
 
 CREATE TABLE [dbo].[NMIComment](
 	[id] [nvarchar](50) NOT NULL,
-	[NMI_number] [nvarchar](10) NOT NULL,
+	[key] [nvarchar](max) NOT NULL,
 	[comment] [nvarchar](max) NULL,
 	[comment_time] [datetime] NOT NULL,
  CONSTRAINT [PK_NMIComment] PRIMARY KEY CLUSTERED 

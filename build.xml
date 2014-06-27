@@ -1,6 +1,6 @@
-<project name="NMIComment" default="help" basedir=".">
+<project name="Writeback" default="help" basedir=".">
   <!-- Define the properties used by the build -->
-  <property name="app.name"      value="NMIComment"/>
+  <property name="app.name"      value="Writeback"/>
   <property name="version" value="1.2"/>
   <property name="tcserver.home" value="F:\\Development\\tools\\apache-tomcat-6.0.39" />
   <property name="work.home"    value="${basedir}/work"/>

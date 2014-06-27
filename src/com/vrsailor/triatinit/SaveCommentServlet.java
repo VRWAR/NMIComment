@@ -70,7 +70,7 @@ public class SaveCommentServlet extends HttpServlet {
 	        Connection con = (Connection) getServletContext().getAttribute("DBConnection");
 	        PreparedStatement ps = null;
 	        try {
-	            ps = con.prepareStatement("insert into NMIComment(id,[key],comment,comment_time) values (?,?,?,?)");
+	            ps = con.prepareStatement("insert into NMIComment(id,Column0001,Column0002,Column0003) values (?,?,?,?)");
 	            
 	            commentID = UUID.randomUUID().toString();
 	            Calendar cal = Calendar.getInstance(); 
