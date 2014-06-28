@@ -70,16 +70,16 @@ try {
 <div  class="listTalbeContainer">
 <table class="listTableHead">
 	<tr>
-		<td width = "100px">Key Value</td>
-		<td >Comment</td>
-		<td width = "150">Comment Time</td>
+		<td width = "110px" align="center">Key Value</td>
+		<td align="center">Comment</td>
+		<td width = "150" align="center">Comment Time</td>
 	</tr>
 </table>
 <div  class="listTable">
 <table>
 <% for(NMIComment comment : commentList){ %>
 	<tr>
-		<td width = "100px"><%=comment.getKey()%></td>
+		<td width = "100px" align="center"><%=comment.getKey()%></td>
 		<td align="left"><%=comment.getComment()%></td>
 		<td width = "150px" align="left"><%=comment.getCommentTime().toString().substring(0, 19)%></td>
 	</tr>
