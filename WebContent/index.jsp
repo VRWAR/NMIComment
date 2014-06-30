@@ -18,6 +18,11 @@ if(request.getParameter("key") != null)  {
 	nmi_number = request.getParameter("key");
 }
 
+String more_info = "";
+if(request.getParameter("moreInfo") != null)  {
+	more_info = request.getParameter("moreInfo");
+}
+
 Connection conn = (Connection) getServletContext().getAttribute("DBConnection");
 List<NMIComment> commentList = new ArrayList<NMIComment>();
 
@@ -51,10 +56,10 @@ try {
     function validateInput() {
     	if(document.getElementById("NMINumber").value == null || 
     			document.getElementById("NMINumber").value == ""){
-   	     	document.getElementById("errorMsg").innerHTML="NMI number cannot be empty.";
+   	     	document.getElementById("errorMsg").innerHTML="Key is needed.";
 	   	}else if(document.getElementById("comment").value == null ||
 	   			document.getElementById("comment").value==""){
-	   		document.getElementById("errorMsg").innerHTML="Comment cannot be empty.";
+	   		document.getElementById("errorMsg").innerHTML="Comment is needed.";
 	   	}else{
 	   		document.getElementById("addComment").submit();
 	   	}
@@ -93,6 +98,7 @@ try {
 	<tr>
 		<td align="left" colspan="2">
 		<input id="NMINumber" name="NMINumber" type="hidden" value="<%=nmi_number%>"/>
+		<input id="NMINumber" name="moreInfo" type="hidden" value="<%=more_info%>"/>
 		</td>
 	</tr>
 	<tr>

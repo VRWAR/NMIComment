@@ -3,7 +3,6 @@ package com.vrsailor.triatinit;
 import java.sql.Timestamp;
 
 public class NMIComment {
-	private static final long serialVersionUID = 1L;
 	
 	private String id;
 	private String key;

@@ -50,6 +50,8 @@ public class SaveCommentServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String NMINumber = request.getParameter("NMINumber");
         String comment = request.getParameter("comment");
+        String moreInfo = request.getParameter("moreInfo");
+        String[] moreInfoArray = moreInfo.split(",");
         String errorMsg = null;
         String commentID = null;
         Timestamp timestamp = null;
@@ -70,7 +72,9 @@ public class SaveCommentServlet extends HttpServlet {
 	        Connection con = (Connection) getServletContext().getAttribute("DBConnection");
 	        PreparedStatement ps = null;
 	        try {
-	            ps = con.prepareStatement("insert into NMIComment(id,Column0001,Column0002,Column0003) values (?,?,?,?)");
+	            ps = con.prepareStatement("insert into "
+	            		+ "NMIComment(id,Column0001,Column0002,Column0003,Column0004,Column0005,Column0006) "
+	            		+ "values (?,?,?,?,?,?,?)");
 	            
 	            commentID = UUID.randomUUID().toString();
 	            Calendar cal = Calendar.getInstance(); 
@@ -80,10 +84,13 @@ public class SaveCommentServlet extends HttpServlet {
 	            ps.setString(2, NMINumber);
 	            ps.setString(3, comment);
 	            ps.setTimestamp(4, timestamp);
+	            ps.setString(5, (moreInfoArray.length > 0 ? moreInfoArray[0] : ""));
+	            ps.setString(6, (moreInfoArray.length > 1 ? moreInfoArray[1] : ""));
+	            ps.setString(7, (moreInfoArray.length > 2 ? moreInfoArray[2] : ""));
 	            ps.execute();
 	             
 	            logger.info("Add comment for " + NMINumber);
-	             
+	            
 	            //forward to login page to login
 	            RequestDispatcher rd = getServletContext().getRequestDispatcher("/successful.html");
 	            rd.include(request, response);

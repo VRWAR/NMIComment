@@ -2,9 +2,12 @@
 
 CREATE TABLE [dbo].[NMIComment](
 	[id] [nvarchar](50) NOT NULL,
-	[key] [nvarchar](max) NOT NULL,
-	[comment] [nvarchar](max) NULL,
-	[comment_time] [datetime] NOT NULL,
+	[Column0001] [nvarchar](10) NOT NULL,
+	[Column0002] [nvarchar](max) NULL,
+	[Column0003] [datetime] NOT NULL,
+	[Column0004] [nvarchar](100) NULL,
+	[Column0005] [nvarchar](100) NULL,
+	[Column0006] [nvarchar](100) NULL,
  CONSTRAINT [PK_NMIComment] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -12,5 +15,4 @@ CREATE TABLE [dbo].[NMIComment](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-
 
