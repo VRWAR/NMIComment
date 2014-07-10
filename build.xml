@@ -72,7 +72,7 @@
 
   <target name="compile" depends="prepare"
           description="Compile Java sources and copy to WEB-INF/classes dir">
-    <javac srcdir="${src.home}"
+    <javac target="1.6" srcdir="${src.home}"
           destdir="${work.home}/WEB-INF/classes">
         <classpath refid="compile.classpath"/>
     </javac>
