@@ -96,7 +96,7 @@ public class SaveCommentServlet extends HttpServlet {
 	            rd.include(request, response);
 	        } catch (SQLException e) {
 	            e.printStackTrace();
-	            logger.error("Database connection problem" + e.getStackTrace());
+	            logger.error("Database connection problem" + e.getStackTrace().toString());
 	            RequestDispatcher rd = getServletContext().getRequestDispatcher("/error.html");
 	            rd.include(request, response);
 	        }finally{
