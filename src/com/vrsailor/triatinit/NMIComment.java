@@ -3,7 +3,6 @@ package com.vrsailor.triatinit;
 import java.sql.Timestamp;
 
 public class NMIComment {
-//test bb
 	private String id;
 	private String key;
 	private String comment;
@@ -33,5 +32,4 @@ public class NMIComment {
 	public void setCommentTime(Timestamp commentTime) {
 		this.commentTime = commentTime;
 	}
-//test cc
 }
