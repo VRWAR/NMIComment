@@ -3,7 +3,7 @@ package com.vrsailor.triatinit;
 import java.sql.Timestamp;
 
 public class NMIComment {
-	//git
+ //git sadf
 	private String id;
 	private String key;
 	private String comment;
