@@ -3,6 +3,7 @@ package com.vrsailor.triatinit;
 import java.sql.Timestamp;
 
 public class NMIComment {
+	//test1
 	private String id;
 	private String key;
 	private String comment;
